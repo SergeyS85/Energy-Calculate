@@ -69,9 +69,10 @@ img{
 	height: 100%;
 	width: 100%;
 	overflow-x: hidden;
+	background-color: rgb(13,17,23);
 }
 .container{
-	background-color: rgb(13,17,23);
+	
 	margin: 0 auto; 
 	width:100%;
 	height: 100%;
