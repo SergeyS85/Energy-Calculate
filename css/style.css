@@ -99,8 +99,21 @@ img{
 	width: 100%;
 	background-color: rgba(13,17,23,.6);
 }
-.cvt{
-	width: 50%;
+.container p{
+	margin-bottom: 3px;
+}
+.output{
+	width: 40%;
+	height: 40px;
+	background-color: rgba(13,17,23,.6);
+	padding: 10px 10px;
+}
+.btn{
+	min-width: 50%;
+	background: green;
+	height: 30px;
+	margin-top: 20px;
+	padding: 0 5px;
 }
 
 

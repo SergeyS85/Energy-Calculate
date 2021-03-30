@@ -14,11 +14,16 @@
 	  <!-- HEADER  -->
 		<div class="wrapper">
 			<div class="container">
-				<label for="">До 150 кВт/ч<input type="value" placeholder="Цена"></label>
-				<label for="">Свыше 150 кВт/ч<input type="value" placeholder="Цена"></label>
-				<label for="">Свыше 800 кВт/ч<input type="value" placeholder="Цена"></label>	
-				<label for="">Использовали енергии<input class='kvt' type="value" placeholder="кВт"></label>			
+				<div class="price"><p>До 150 кВт/ч</p><input class="a" type="text" placeholder="Цена"></div>
+				<div class="price"><p>Свыше 150 кВт/ч</p><input class="b" type="text" placeholder="Цена"></div>
+				<div class="price"><p>Свыше 800 кВт/ч</p><input class="c" type="text" placeholder="Цена"></div>
+				<div class="result_container">
+					<div class="kvt"><p>Израсходованно кВт</p><input type="text" placeholder="кВт"></div>
+					<div class="res_kvt"><p>Результат</p><div class="output"></div></div>
+				</div>
+				<div class="btn">Расчитать</div>	
 			</div>
-		</div> 	 
+		</div> 	
+		<script src="js/index.js"></script> 
 </body>
 </html>
