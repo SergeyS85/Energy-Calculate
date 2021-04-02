@@ -1,19 +1,4 @@
-@font-face{
-	font-family: ;
-	src: url();
-}
-@font-face{
-	font-family: ;
-	src: url();
-}
-@font-face{
-	font-family: ;
-	src: url();
-}
-@font-face{
-	font-family: ;
-	src: url();
-}
+
    					/*///RESET CSS///*/
 :root{
 	font-size: 16px;
@@ -60,11 +45,7 @@ img{
 	justify-content: center;
 	align-items: center;
 }
-.clearfix:after{
-	content:"";
-	display: table;
-	clear: both;
-}
+
 .wrapper{
 	height: 100%;
 	width: 100%;
@@ -98,6 +79,10 @@ img{
 	padding: 5px;
 	width: 100%;
 	background-color: rgba(13,17,23,.6);
+	outline: none;
+}
+.container input:focus{
+	border: 1px solid green;
 }
 .container p{
 	margin-bottom: 3px;
@@ -123,24 +108,4 @@ img{
 }
 
 
-   					/* ///MEDIA QUERY/// */
-
-@media(max-width: 782px){
-
-}
-
-/* ///////// */
-@media(min-width: 783px) and (max-width: 900px){
-
-}
-
-/* ///////// */
-@media(min-width: 901px) and (max-width: 1199px){
-
-}
-
-/* ///////// */
-@media(min-width: 1200px){
-
-}  					
- 					
+					
