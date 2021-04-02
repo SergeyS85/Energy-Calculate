@@ -105,11 +105,13 @@ img{
 .kvt{
 	width: 50%;
 }
+
 .output{
 	width: 40%;
 	height: 40px;
 	background-color: rgba(13,17,23,.6);
 	padding: 10px 10px;
+	color: #5dff00;
 }
 .btn{
 	min-width: 50%;
