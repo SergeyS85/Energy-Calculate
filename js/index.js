@@ -10,7 +10,7 @@ var search = ['0','1','2','3','4','5']
 inputAll.forEach(function(e) {
 	e.oninput = function(event) {
 		var tar = this.value;
-		console.log(tar)
+		
 		var inVal = document.querySelectorAll('input').value;
 		// if (tar.length == 0) {
 		// 	this.style.border = null;
@@ -23,7 +23,7 @@ inputAll.forEach(function(e) {
 			this.style.border = '1px solid red';
 		}
 	}
-	event.preventDefault()
+	
 })
 
 btn.addEventListener('click', function() {
@@ -33,3 +33,4 @@ btn.addEventListener('click', function() {
 	res_kvt.innerHTML = res.toFixed(2);
 
 })
+document.body.innerHTML += navigator.userAgent
