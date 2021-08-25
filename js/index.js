@@ -32,6 +32,7 @@ function checkPhoneForInput(){
 	inputAll.forEach(function(item){
 	item.onfocus = function(event){
 		if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) document.querySelector('.keyboard').style.display = 'flex'
+		event.preventDefault()	
 	}
 })
 }
@@ -44,9 +45,6 @@ function clickResult(){
 		res_kvt.innerHTML = res.toFixed(2);
   })
 }
-
-		
-
 
 function init(){
 	clickResult()
