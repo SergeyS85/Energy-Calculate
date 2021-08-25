@@ -53,7 +53,7 @@ img{
 	background: rgb(13,17,23);
 }
 .container{
-	
+	position: relative;
 	margin: 0 auto; 
 	width:100%;
 	min-height: 100%;
@@ -107,5 +107,29 @@ img{
 	padding: 0 5px;
 }
 
+/*///////////KEYBOARD////////////*/
 
-					
+.keyboard{
+	width: 80%;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%,-50%);
+	font-size: 20px;
+	display: none;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+.keyboard .btn_key{
+	width: 60px;
+	height: 60px;
+	background: rgba(111, 132, 255, .3);
+	border: 1px solid white;
+	margin: 1px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}	
+.dot{
+	font-size: 60px;
+}				
