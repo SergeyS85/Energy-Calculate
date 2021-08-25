@@ -31,7 +31,7 @@ let btn = document.querySelector('.btn');
 function checkPhoneForInput(){
 	inputAll.forEach(function(item){
 	item.onfocus = function(event){
-		if (!/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) document.querySelector('.keyboard').style.display = 'flex'
+		if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) document.querySelector('.keyboard').style.display = 'flex'
 	}
 })
 }
