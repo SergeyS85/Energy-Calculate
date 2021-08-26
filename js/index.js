@@ -28,13 +28,27 @@ let btn = document.querySelector('.btn');
 // 	}
 	
 // })
+// window.onload = function(){
+
+// }
+function writeInLocalStorage(){
+	btn.addEventListener('click',function(){
+		inputAll.forEach(function(item,i){
+			localStorage.setItem('input'+i,item.value)
+			console.log(item.value)
+		})
+	})
+}
+
 function checkPhoneForInput(){
+	let platform = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)
 	inputAll.forEach(function(item){
-	item.onfocus = function(event){
-		if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) document.querySelector('.keyboard').style.display = 'flex'
-		event.preventDefault()	
-	}
-})
+		if (platform) item.setAttribute("readonly",'readonly')
+		item.onfocus = function(event){
+			if (platform) document.querySelector('.keyboard').style.display = 'flex'
+			event.preventDefault()	
+		}
+  })
 }
 
 function clickResult(){
@@ -47,6 +61,7 @@ function clickResult(){
 }
 
 function init(){
+	writeInLocalStorage()
 	clickResult()
 	checkPhoneForInput()
 }	
