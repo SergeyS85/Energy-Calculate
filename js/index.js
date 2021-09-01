@@ -7,48 +7,38 @@ let kvt = document.querySelector('.kvt input');
 let res_kvt = document.querySelector('.output');
 let btn = document.querySelector('.btn');
 
-// inputAll.forEach(function(e) {
-// 	e.oninput = function(event) {
-// 		let tar = this.value;
-// 		console.log(tar.search(/[a-z]/gi))
-// 		let inVal = document.querySelectorAll('input').value;
-// 		if (tar.length == 0) {
-// 			this.style.border = '1px solid red';
-// 		}
-// 		// if(tar.search(/^[\d\.]/i) != -1){
-// 		// 	this.style.border = '3px solid red'
-// 		// }
-// 		// // if (tar.match(/(\.+)|\d+/i)) {
-// 		// // 	this.style.border = '3px solid green';
-// 		// // }
-		
-// 		// else{
-// 		// 	this.style.border = '1px solid green'
-// 		// }
-// 	}
-	
-// })
-// window.onload = function(){
+function validateInput(){
+	inputAll.forEach(function(e) {
+		e.oninput = function(event) {
+			let tar = event.target.value;
+			let status = false;
+			let inVal = document.querySelectorAll('input').value;
+			
+			if((tar.search(/[^\d\.]/g) == -1)){
+				status = true;
+				this.style.border = '1px solid green'
+			}
+			if((tar.search(/[^\d\.]/g) !== -1)){
+				this.style.border = '1px solid red'			
+			} 
+			if (tar.length == 0) {
+				this.style.border = 'none';
+			}
+		}	
+  })
+}
+function getLocalStorageValue(){
+	inputAll.forEach(function(item,i){
+		item.value = localStorage.getItem('input'+i)
+	})
+}
 
-// }
 function writeInLocalStorage(){
 	btn.addEventListener('click',function(){
 		inputAll.forEach(function(item,i){
 			localStorage.setItem('input'+i,item.value)
-			console.log(item.value)
 		})
 	})
-}
-
-function checkPhoneForInput(){
-	let platform = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)
-	inputAll.forEach(function(item){
-		if (platform) item.setAttribute("readonly",'readonly')
-		item.onfocus = function(event){
-			if (platform) document.querySelector('.keyboard').style.display = 'flex'
-			event.preventDefault()	
-		}
-  })
 }
 
 function clickResult(){
@@ -61,8 +51,9 @@ function clickResult(){
 }
 
 function init(){
+	getLocalStorageValue()
+	validateInput()
 	writeInLocalStorage()
 	clickResult()
-	checkPhoneForInput()
 }	
 init()
